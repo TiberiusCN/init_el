@@ -42,6 +42,7 @@
 (unless (package-installed-p 'origami) (package-install 'origami))
 (unless (package-installed-p 'lua-mode) (package-install 'lua-mode))
 (unless (package-installed-p 'company-statistics) (package-install 'company-statistics))
+(unless (package-installed-p 'rust-mode) (package-install 'rust-mode))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

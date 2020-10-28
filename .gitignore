@@ -1,0 +1,14 @@
+.*
+auto-save-list
+elpa
+*.el
+games
+tramp
+timelog
+transient
+url
+vimish-fold
+request
+eww*
+projectile*
+backup

@@ -258,7 +258,7 @@
  '(custom-safe-themes
    '("11e57648ab04915568e558b77541d0e94e69d09c9c54c06075938b6abc0189d8" "4c8372c68b3eab14516b6ab8233de2f9e0ecac01aaa859e547f902d27310c0c3" "e26e879d250140e0d4c4d5ab457c32bcb29742599bd28c1ce31301344c6f2a11" "b6f06081b007b57be61b82fb53f27315e2cf38fa690be50d6d63d2b62a408636" "9a3c51c59edfefd53e5de64c9da248c24b628d4e78cc808611abd15b3e58858f" "595099e6f4a036d71de7e1512656e9375dd72cf60ff69a5f6d14f0171f1de9c1" default))
  '(evil-shift-width 2)
- '(evil-undo-system 'undo-redo)
+ '(evil-undo-system 'undo-tree)
  '(lsp-diagnostics-flycheck-default-level 'info)
  '(lsp-modeline-code-actions-segments '(count))
  '(lsp-rust-clippy-preference "on")
@@ -271,7 +271,7 @@
      "< " mode-line-misc-info mode-line-client mode-line-remote mode-line-buffer-identification mode-line-position evil-mode-line-tag))
  '(opascal-indent-level 2)
  '(package-selected-packages
-   '(lsp-ui google-translate unicode-fonts telega company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme dap-mode ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode helm-lsp lsp-treemacs company-lsp flycheck lsp-mode evil))
+   '(google-translate unicode-fonts telega company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
  '(realgud-safe-mode nil)
  '(tab-width 2))
 (custom-set-faces
@@ -286,6 +286,8 @@
  '(rainbow-delimiters-depth-1-face ((t (:inherit outline-1 :foreground "brightred"))))
  '(rainbow-delimiters-depth-4-face ((t (:inherit outline-4 :foreground "brightmagenta"))))
  '(rainbow-delimiters-depth-5-face ((t (:inherit outline-5 :foreground "brightgreen")))))
+
+(global-undo-tree-mode 1)
 
 (provide 'init)
 

@@ -12,6 +12,7 @@
 
 ;;; packages installation
 ;(package-refresh-contents)
+(unless (package-installed-p 'undo-tree) (package-install 'undo-tree))
 (unless (package-installed-p 'linum-relative) (package-install 'linum-relative))
 (unless (package-installed-p 'evil) (package-install 'evil))
 (unless (package-installed-p 'lsp-mode) (package-install 'lsp-mode))

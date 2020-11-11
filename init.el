@@ -2,6 +2,8 @@
 
 (add-hook 'window-setup-hook 'on-after-init)
 
+(add-to-list 'default-frame-alist '(background-color . "unspecified"))
+
 (display-time-mode 1)
 
 (require 'package)
@@ -30,7 +32,7 @@
 (unless (package-installed-p 'xclip) (package-install 'xclip))
 (unless (package-installed-p 'evil-easymotion) (package-install 'evil-easymotion))
 (unless (package-installed-p 'magit) (package-install 'magit))
-(unless (package-installed-p 'evilmagit) (package-install 'evil-magit))
+(unless (package-installed-p 'evil-magit) (package-install 'evil-magit))
 (unless (package-installed-p 'treemacs-projectile) (package-install 'treemacs-projectile))
 (unless (package-installed-p 'helm-projectile) (package-install 'helm-projectile))
 (unless (package-installed-p 'russian-holidays) (package-install 'russian-holidays))
@@ -46,6 +48,7 @@
 (unless (package-installed-p 'rust-mode) (package-install 'rust-mode))
 (unless (package-installed-p 'unicode-fonts) (package-install 'unicode-fonts))
 (unless (package-installed-p 'google-translate) (package-install 'google-translate))
+(unless (package-installed-p 'evil-nerd-commenter) (package-install 'evil-nerd-commenter))
 
 (load-theme 'molokai t)
 
@@ -102,6 +105,9 @@
 
 (require 'russian-holidays)
 (setq calendar-holidays russian-holidays)
+
+(require 'evil-nerd-commenter)
+(evilnc-default-hotkeys)
 
 ;;; bindings
 (define-key evil-normal-state-map (kbd "C-j") nil)
@@ -272,7 +278,7 @@
      "< " mode-line-misc-info mode-line-client mode-line-remote mode-line-buffer-identification mode-line-position evil-mode-line-tag))
  '(opascal-indent-level 2)
  '(package-selected-packages
-   '(google-translate unicode-fonts telega company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
+   '(evil-nerd-commenter google-translate unicode-fonts telega company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
  '(realgud-safe-mode nil)
  '(tab-width 2))
 (custom-set-faces

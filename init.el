@@ -2,7 +2,7 @@
 
 (add-hook 'window-setup-hook 'on-after-init)
 
-(add-to-list 'default-frame-alist '(background-color . "unspecified"))
+(add-to-list 'default-frame-alist '(background-color . "black"))
 
 (display-time-mode 1)
 
@@ -28,7 +28,7 @@
 (unless (package-installed-p 'lsp-ui) (package-install 'lsp-ui))
 (unless (package-installed-p 'helm-lsp) (package-install 'helm-lsp))
 (unless (package-installed-p 'treemacs-evil) (package-install 'treemacs-evil))
-(unless (package-installed-p 'molokai-theme) (package-install 'molokai-theme))
+(unless (package-installed-p 'cyberpunk-theme) (package-install 'cyberpunk-theme))
 (unless (package-installed-p 'xclip) (package-install 'xclip))
 (unless (package-installed-p 'evil-easymotion) (package-install 'evil-easymotion))
 (unless (package-installed-p 'magit) (package-install 'magit))
@@ -49,12 +49,12 @@
 (unless (package-installed-p 'unicode-fonts) (package-install 'unicode-fonts))
 (unless (package-installed-p 'google-translate) (package-install 'google-translate))
 (unless (package-installed-p 'evil-nerd-commenter) (package-install 'evil-nerd-commenter))
-
-(load-theme 'molokai t)
+(unless (package-installed-p 'all-the-icons) (package-install 'all-the-icons))
+(unless (package-installed-p 'clean-buffers) (package-install 'clean-buffers))
+(unless (package-installed-p 'ace-window) (package-install 'ace-window))
 
 ;;; packages settings
 (setq evil-want-keybinding nil)
-
 
 (require 'linum-relative)
 (linum-relative-global-mode 1)
@@ -109,6 +109,8 @@
 (require 'evil-nerd-commenter)
 (evilnc-default-hotkeys)
 
+(require 'ace-window)
+
 ;;; bindings
 (define-key evil-normal-state-map (kbd "C-j") nil)
 (global-set-key (kbd "C-j") nil)
@@ -124,6 +126,8 @@
 (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)
 (evilem-default-keybindings "SPC")
 (define-key treemacs-mode-map (kbd "SPC SPC") '(lambda () (interactive) (
+(global-set-key (kbd "C-j w") 'ace-select-window)
+(global-set-key (kbd "C-j S-w") 'ace-swap-window)
                                                             ;treemacs-copy-path-at-point
                                                             shell-command (car kill-ring))))
 (define-key evil-normal-state-map (kbd "M-p") 'projectile-switch-project)
@@ -137,6 +141,8 @@
 ;;; vanilla settings
 (show-paren-mode 1)
 (menu-bar-mode 0)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 ;; colorized shell
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
@@ -183,35 +189,35 @@
 ;(modify-syntax-entry ?> " " )
 
 ;; set colors
-(set-face-attribute 'lsp-ui-doc-background nil :background "unspecified")
-(set-face-attribute 'magit-section-highlight nil :background "unspecified")
-(set-face-attribute 'magit-diff-context-highlight nil :background "unspecified")
+(set-face-attribute 'lsp-ui-doc-background nil :background "black")
+(set-face-attribute 'magit-section-highlight nil :background "black")
+(set-face-attribute 'magit-diff-context-highlight nil :background "black")
 (set-face-attribute 'magit-diff-context-highlight nil :foreground "brighwite")
 (set-face-attribute 'magit-diff-hunk-heading-highlight nil :background "color-234")
 (set-face-attribute 'magit-diff-hunk-heading-highlight nil :foreground "color-201")
 (set-face-attribute 'magit-diff-hunk-heading nil :background "color-234")
 (set-face-attribute 'magit-diff-hunk-heading nil :foreground "color-88")
-(set-face-attribute 'magit-diff-removed-highlight nil :background "unspecified")
+(set-face-attribute 'magit-diff-removed-highlight nil :background "black")
 (set-face-attribute 'magit-diff-removed-highlight nil :foreground "brightred")
-(set-face-attribute 'magit-diff-added-highlight nil :background "unspecified")
+(set-face-attribute 'magit-diff-added-highlight nil :background "black")
 (set-face-attribute 'magit-diff-added-highlight nil :foreground "brightgreen")
-(set-face-attribute 'magit-diff-removed nil :background "unspecified")
+(set-face-attribute 'magit-diff-removed nil :background "black")
 (set-face-attribute 'magit-diff-removed nil :foreground "color-88")
-(set-face-attribute 'magit-diff-added nil :background "unspecified")
+(set-face-attribute 'magit-diff-added nil :background "black")
 (set-face-attribute 'magit-diff-added nil :foreground "color-22")
 (set-face-attribute 'smerge-markers nil :background "color-55")
 (set-face-attribute 'smerge-markers nil :foreground "black")
-(set-face-attribute 'smerge-upper nil :background "unspecified")
-(set-face-attribute 'smerge-lower nil :background "unspecified")
-(set-face-attribute 'helm-selection nil :background "unspecified")
+(set-face-attribute 'smerge-upper nil :background "black")
+(set-face-attribute 'smerge-lower nil :background "black")
+(set-face-attribute 'helm-selection nil :background "black")
 (set-face-attribute 'helm-selection nil :foreground "magenta")
-(set-face-attribute 'mode-line nil :background "unspecified")
+(set-face-attribute 'mode-line nil :background "black")
 (set-face-attribute 'mode-line nil :foreground "yellow")
-(set-face-attribute 'mode-line-inactive nil :background "unspecified")
+(set-face-attribute 'mode-line-inactive nil :background "black")
 (set-face-attribute 'mode-line-inactive nil :foreground "yellow")
-(set-face-attribute 'company-tooltip nil :background "unspecified")
+(set-face-attribute 'company-tooltip nil :background "black")
 (set-face-attribute 'company-tooltip nil :foreground "grey")
-(set-face-attribute 'company-tooltip-selection nil :background "unspecified")
+(set-face-attribute 'company-tooltip-selection nil :background "black")
 (set-face-attribute 'company-tooltip-selection nil :foreground "yellow")
 (set-face-attribute 'company-tooltip-annotation nil :foreground "blue")
 (set-face-attribute 'company-tooltip-common nil :foreground "blue")
@@ -223,7 +229,7 @@
 (set-face-attribute 'flycheck-error nil :foreground "brightyellow")
 
 ;; set transparency
-(defun on-after-init () (unless (display-graphic-p (selected-frame)) (set-face-background 'default "unspecified-bg" (selected-frame))))
+(defun on-after-init () (unless (display-graphic-p (selected-frame)) (set-face-background 'default "black-bg" (selected-frame))))
 
 ;; calendar
 (setq calendar-week-start-day 1
@@ -261,13 +267,18 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ace-window-display-mode t)
  '(c-basic-offset 2)
+ '(clean-buffer-list-delay-general 1)
+ '(clean-buffer-list-delay-special 600)
+ '(clean-buffer-list-kill-regexps '("\\`\\*Man " "^[^*]*$"))
+ '(custom-enabled-themes '(cyberpunk doom-dark+))
  '(custom-safe-themes
-   '("11e57648ab04915568e558b77541d0e94e69d09c9c54c06075938b6abc0189d8" "4c8372c68b3eab14516b6ab8233de2f9e0ecac01aaa859e547f902d27310c0c3" "e26e879d250140e0d4c4d5ab457c32bcb29742599bd28c1ce31301344c6f2a11" "b6f06081b007b57be61b82fb53f27315e2cf38fa690be50d6d63d2b62a408636" "9a3c51c59edfefd53e5de64c9da248c24b628d4e78cc808611abd15b3e58858f" "595099e6f4a036d71de7e1512656e9375dd72cf60ff69a5f6d14f0171f1de9c1" default))
+   '("b89a4f5916c29a235d0600ad5a0849b1c50fab16c2c518e1d98f0412367e7f97" "79278310dd6cacf2d2f491063c4ab8b129fee2a498e4c25912ddaa6c3c5b621e" "5d09b4ad5649fea40249dd937eaaa8f8a229db1cec9a1a0ef0de3ccf63523014" "dde8c620311ea241c0b490af8e6f570fdd3b941d7bc209e55cd87884eb733b0e" "e6ff132edb1bfa0645e2ba032c44ce94a3bd3c15e3929cdf6c049802cf059a2a" "76bfa9318742342233d8b0b42e824130b3a50dcc732866ff8e47366aed69de11" "c4bdbbd52c8e07112d1bfd00fee22bf0f25e727e95623ecb20c4fa098b74c1bd" "a3b6a3708c6692674196266aad1cb19188a6da7b4f961e1369a68f06577afa16" "4bca89c1004e24981c840d3a32755bf859a6910c65b829d9441814000cf6c3d0" "990e24b406787568c592db2b853aa65ecc2dcd08146c0d22293259d400174e37" "7de92d9e450585f9f435f2d9b265f34218cb235541c3d0d42c154bbbfe44d4dd" "c3fa63eab93d1f0b4bf9f60a98a2848ba29c34cc6f2ef5cf4076d9c190a47a6c" "922f930fc5aeec220517dbf74af9cd2601d08f8250e4a15c385d509e22629cac" "c2bce71b37ffd6e95fbd3b98d6eaadd113ec308f85149cfc8f50dee716764fed" "09feeb867d1ca5c1a33050d857ad6a5d62ad888f4b9136ec42002d6cdf310235" "a0d9281cf41e8a226f0539a7f54e4812fdeaaec36c751b84671df97a54013465" "654b365467a92ff70c70f4926974e07dcdb34805d2787c51710b467e695342e6" "ff8be9ed2696bf7bc999423d909a603cb23a9525bb43135c0d256b0b9377c958" "11e57648ab04915568e558b77541d0e94e69d09c9c54c06075938b6abc0189d8" "4c8372c68b3eab14516b6ab8233de2f9e0ecac01aaa859e547f902d27310c0c3" "e26e879d250140e0d4c4d5ab457c32bcb29742599bd28c1ce31301344c6f2a11" "b6f06081b007b57be61b82fb53f27315e2cf38fa690be50d6d63d2b62a408636" "9a3c51c59edfefd53e5de64c9da248c24b628d4e78cc808611abd15b3e58858f" "595099e6f4a036d71de7e1512656e9375dd72cf60ff69a5f6d14f0171f1de9c1" default))
  '(evil-shift-width 2)
  '(evil-undo-system 'undo-tree)
  '(lsp-diagnostics-flycheck-default-level 'info)
- '(lsp-modeline-code-actions-segments '(count))
+ '(lsp-modeline-code-actions-segments '(count icon))
  '(lsp-rust-clippy-preference "on")
  '(lsp-rust-wait-to-build 500.0)
  '(lsp-ui-sideline-diagnostic-max-lines 10)
@@ -278,9 +289,10 @@
      "< " mode-line-misc-info mode-line-client mode-line-remote mode-line-buffer-identification mode-line-position evil-mode-line-tag))
  '(opascal-indent-level 2)
  '(package-selected-packages
-   '(evil-nerd-commenter google-translate unicode-fonts telega company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
+   '(cyberpunk-theme timerfunctions clean-buffers all-the-icons evil-nerd-commenter google-translate unicode-fonts telega company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
  '(realgud-safe-mode nil)
- '(tab-width 2))
+ '(tab-width 2)
+ '(telega-mode-line-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

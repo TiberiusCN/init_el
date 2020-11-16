@@ -52,6 +52,7 @@
 (unless (package-installed-p 'all-the-icons) (package-install 'all-the-icons))
 (unless (package-installed-p 'clean-buffers) (package-install 'clean-buffers))
 (unless (package-installed-p 'ace-window) (package-install 'ace-window))
+(unless (package-installed-p 'transwin) (package-install 'transwin))
 
 ;;; packages settings
 (setq evil-want-keybinding nil)
@@ -95,9 +96,6 @@
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 (add-hook 'latex-mode-hook #'lsp-deferred)
 
-(require 'xclip)
-(xclip-mode 1)
-
 (require 'evil-easymotion)
 
 (require 'magit)
@@ -126,11 +124,11 @@
 (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)
 (evilem-default-keybindings "SPC")
 (define-key treemacs-mode-map (kbd "SPC SPC") '(lambda () (interactive) (
-(global-set-key (kbd "C-j w") 'ace-select-window)
-(global-set-key (kbd "C-j S-w") 'ace-swap-window)
                                                             ;treemacs-copy-path-at-point
                                                             shell-command (car kill-ring))))
 (define-key evil-normal-state-map (kbd "M-p") 'projectile-switch-project)
+(global-set-key (kbd "C-j w") 'ace-select-window)
+(global-set-key (kbd "C-j S-w") 'ace-swap-window)
 
 ;;; indentation
 (progn (setq-default indent-tabs-mode nil)) ; tabs are spaces
@@ -307,6 +305,12 @@
  '(rainbow-delimiters-depth-5-face ((t (:inherit outline-5 :foreground "green1")))))
 
 (global-undo-tree-mode 1)
+
+;; GUI only
+(require 'xclip)
+(xclip-mode 1)
+(require 'transwin)
+(global-set-key (kbd "C-j t") 'transwin-toggle-transparent-frame)
 
 (provide 'init)
 

@@ -53,6 +53,7 @@
 (unless (package-installed-p 'clean-buffers) (package-install 'clean-buffers))
 (unless (package-installed-p 'ace-window) (package-install 'ace-window))
 (unless (package-installed-p 'transwin) (package-install 'transwin))
+(unless (package-installed-p 'sdcv) (package-install 'sdcv))
 
 ;;; packages settings
 (setq evil-want-keybinding nil)
@@ -287,7 +288,7 @@
      "< " mode-line-misc-info mode-line-client mode-line-remote mode-line-buffer-identification mode-line-position evil-mode-line-tag))
  '(opascal-indent-level 2)
  '(package-selected-packages
-   '(telega cyberpunk-theme timerfunctions clean-buffers all-the-icons evil-nerd-commenter google-translate unicode-fonts company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
+   '(sdcv telega cyberpunk-theme timerfunctions clean-buffers all-the-icons evil-nerd-commenter google-translate unicode-fonts company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
  '(realgud-safe-mode nil)
  '(tab-width 2)
  '(telega-mode-line-mode t))
@@ -296,9 +297,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-delimiter-face ((t (:foreground "gainsboro" :slant italic)))) ; color-20
+ '(font-lock-comment-delimiter-face ((t (:foreground "gainsboro" :slant italic))))
  '(font-lock-comment-face ((t (:foreground "gainsboro" :slant italic))))
- '(lsp-lsp-flycheck-warning-unnecessary-face ((t (:inherit nil :extend nil :stipple nil :foreground "orchid" :strike-through nil :underline nil :slant italic))) t) ; color-205
+ '(lsp-lsp-flycheck-warning-unnecessary-face ((t (:inherit nil :extend nil :stipple nil :foreground "orchid" :strike-through nil :underline nil :slant italic))) t)
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :background "red" :foreground "yellow1"))))
  '(rainbow-delimiters-depth-1-face ((t (:inherit outline-1 :foreground "red1"))))
  '(rainbow-delimiters-depth-4-face ((t (:inherit outline-4 :foreground "magenta1"))))

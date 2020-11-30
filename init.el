@@ -223,8 +223,8 @@
 (set-face-attribute 'company-tooltip-common-selection nil :foreground "blue")
 (set-face-attribute 'magit-diff-our-highlight nil :foreground "gold") ; color-214
 (set-face-attribute 'magit-diff-their-highlight nil :foreground "blue")
-(set-face-attribute 'smerge-refined-removed nil :background "gray") ; color-239
-(set-face-attribute 'smerge-refined-added nil :background "gray")
+(set-face-attribute 'smerge-refined-removed nil :background "gray5") ; color-239
+(set-face-attribute 'smerge-refined-added nil :background "gray5")
 (set-face-attribute 'flycheck-error nil :foreground "yellow1") ; brightyellow
 
 ;; set transparency
@@ -295,7 +295,8 @@
    '(sdcv telega cyberpunk-theme timerfunctions clean-buffers all-the-icons evil-nerd-commenter google-translate unicode-fonts company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
  '(realgud-safe-mode nil)
  '(tab-width 2)
- '(telega-mode-line-mode t))
+ '(telega-mode-line-mode t)
+ '(telega-server-libs-prefix "~/.emacs.d/telega"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

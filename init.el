@@ -129,7 +129,7 @@
                                                             shell-command (car kill-ring))))
 (define-key evil-normal-state-map (kbd "M-p") 'projectile-switch-project)
 (global-set-key (kbd "C-j w") 'ace-select-window)
-(global-set-key (kbd "C-j W") 'ace-swap-window)
+(global-set-key (kbd "C-j z") 'ace-swap-window)
 
 ;;; indentation
 (progn (setq-default indent-tabs-mode nil)) ; tabs are spaces

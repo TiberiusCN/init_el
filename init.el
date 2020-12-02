@@ -305,10 +305,13 @@
  '(font-lock-comment-delimiter-face ((t (:foreground "gainsboro" :slant italic))))
  '(font-lock-comment-face ((t (:foreground "gainsboro" :slant italic))))
  '(lsp-lsp-flycheck-warning-unnecessary-face ((t (:inherit nil :extend nil :stipple nil :foreground "orchid" :strike-through nil :underline nil :slant italic))) t)
+ '(magit-diff-their-highlight ((t (:inherit magit-diff-added-highlight :foreground "cyan"))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :background "red" :foreground "yellow1"))))
  '(rainbow-delimiters-depth-1-face ((t (:inherit outline-1 :foreground "red1"))))
  '(rainbow-delimiters-depth-4-face ((t (:inherit outline-4 :foreground "magenta1"))))
- '(rainbow-delimiters-depth-5-face ((t (:inherit outline-5 :foreground "green1")))))
+ '(rainbow-delimiters-depth-5-face ((t (:inherit outline-5 :foreground "green1"))))
+ '(smerge-refined-added ((t (:inherit smerge-refined-change :background "dark green"))))
+ '(smerge-refined-removed ((t (:inherit smerge-refined-change :background "dark red")))))
 
 (global-undo-tree-mode 1)
 

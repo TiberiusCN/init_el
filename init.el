@@ -120,13 +120,12 @@
 (define-key evil-normal-state-map (kbd "C-j e") 'lsp-find-declaration)
 (define-key evil-normal-state-map (kbd "C-j i") 'lsp-find-implementation)
 (define-key evil-normal-state-map (kbd "C-j r") 'lsp-find-references)
+(define-key evil-normal-state-map (kbd "C-j m") 'magit)
 (define-key evil-normal-state-map (kbd "SPC SPC") 'treemacs)
+(define-key treemacs-mode-map (kbd "SPC SPC") 'treemacs)
 (define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
 (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)
 (evilem-default-keybindings "SPC")
-(define-key treemacs-mode-map (kbd "SPC SPC") '(lambda () (interactive) (
-                                                            ;treemacs-copy-path-at-point
-                                                            shell-command (car kill-ring))))
 (define-key evil-normal-state-map (kbd "M-p") 'projectile-switch-project)
 (global-set-key (kbd "C-j w") 'ace-select-window)
 (global-set-key (kbd "C-j z") 'ace-swap-window)

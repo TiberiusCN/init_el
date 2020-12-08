@@ -74,14 +74,14 @@
 (require 'flycheck)
 (require 'flycheck-rust)
 (require 'company-lsp)
+(require 'treemacs)
+(require 'treemacs-evil)
+(require 'treemacs-projectile)
 (require 'lsp-treemacs)
 ;(require 'lsp-clients)
 (require 'company-box)
 (require 'lsp-ui)
 (require 'helm-lsp)
-(require 'treemacs)
-(require 'treemacs-evil)
-(require 'treemacs-projectile)
 (require 'helm-projectile)
 (projectile-mode 1)
 (setq projectile-completion-system 'helm)
@@ -112,6 +112,10 @@
 (evilnc-default-hotkeys)
 
 (require 'ace-window)
+
+(defun treemacs-ignore (filename absolute-path)
+  (or (string-equal filename ".")
+      (string-equal filename "..")))
 
 ;;; bindings
 (define-key evil-normal-state-map (kbd "C-j") nil)
@@ -320,7 +324,8 @@
  '(realgud-safe-mode nil)
  '(tab-width 2)
  '(telega-mode-line-mode t)
- '(telega-server-libs-prefix "~/.emacs.d/telega"))
+ '(telega-server-libs-prefix "~/.emacs.d/telega")
+ '(treemacs-ignored-file-predicates '(treemacs-ignore)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

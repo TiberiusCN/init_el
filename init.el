@@ -55,6 +55,7 @@
 (unless (package-installed-p 'transwin) (package-install 'transwin))
 (unless (package-installed-p 'sdcv) (package-install 'sdcv))
 (unless (package-installed-p 'glsl-mode) (package-install 'glsl-mode))
+(unless (package-installed-p 'format-all) (package-install 'format-all))
 
 ;;; packages settings
 (setq evil-want-keybinding nil)
@@ -182,6 +183,9 @@
 
 (require 'yasnippet)
 (add-hook 'prog-mode-hook 'yas-minor-mode)
+
+(require 'format-all)
+(add-hook 'prog-mode-hook 'format-all-mode)
 
 ;; syntax table
 ;(modify-syntax-entry ?< " " )

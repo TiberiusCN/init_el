@@ -286,6 +286,8 @@
  '(evil-undo-system 'undo-tree)
  '(lsp-diagnostics-flycheck-default-level 'info)
  '(lsp-modeline-code-actions-segments '(count icon))
+ '(lsp-rust-all-features t)
+ '(lsp-rust-analyzer-cargo-watch-command "clippy")
  '(lsp-rust-clippy-preference "on")
  '(lsp-rust-wait-to-build 500.0)
  '(lsp-ui-sideline-diagnostic-max-lines 10)

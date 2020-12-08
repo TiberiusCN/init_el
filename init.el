@@ -302,10 +302,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "maroon"))))
+ '(company-tooltip-common ((t (:inherit company-tooltip :foreground "magenta"))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-common :foreground "blue"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "gainsboro" :slant italic))))
  '(font-lock-comment-face ((t (:foreground "gainsboro" :slant italic))))
  '(lsp-lsp-flycheck-warning-unnecessary-face ((t (:inherit nil :extend nil :stipple nil :foreground "orchid" :strike-through nil :underline nil :slant italic))) t)
  '(magit-diff-their-highlight ((t (:inherit magit-diff-added-highlight :foreground "cyan"))))
+ '(magit-head ((t (:foreground "cyan" :weight bold))))
+ '(magit-reflog-checkout ((t (:foreground "cyan"))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :background "red" :foreground "yellow1"))))
  '(rainbow-delimiters-depth-1-face ((t (:inherit outline-1 :foreground "red1"))))
  '(rainbow-delimiters-depth-4-face ((t (:inherit outline-4 :foreground "magenta1"))))

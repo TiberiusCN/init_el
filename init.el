@@ -54,6 +54,7 @@
 (unless (package-installed-p 'ace-window) (package-install 'ace-window))
 (unless (package-installed-p 'transwin) (package-install 'transwin))
 (unless (package-installed-p 'sdcv) (package-install 'sdcv))
+(unless (package-installed-p 'glsl-mode) (package-install 'glsl-mode))
 
 ;;; packages settings
 (setq evil-want-keybinding nil)

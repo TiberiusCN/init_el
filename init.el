@@ -317,6 +317,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "sandy brown"))))
+ '(company-tooltip-common ((t (:inherit company-tooltip :foreground "green"))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-common :foreground "magenta"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "gainsboro" :slant italic))))
  '(font-lock-comment-face ((t (:foreground "gainsboro" :slant italic))))
  '(lsp-lsp-flycheck-warning-unnecessary-face ((t (:inherit nil :extend nil :stipple nil :foreground "orchid" :strike-through nil :underline nil :slant italic))) t)

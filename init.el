@@ -17,6 +17,7 @@
 (unless (package-installed-p 'ace-window) (package-install 'ace-window))
 (unless (package-installed-p 'all-the-icons) (package-install 'all-the-icons))
 (unless (package-installed-p 'clean-buffers) (package-install 'clean-buffers))
+(unless (package-installed-p 'clojure-mode) (package-install 'clojure-mode))
 (unless (package-installed-p 'company-box) (package-install 'company-box))
 (unless (package-installed-p 'company-lsp) (package-install 'company-lsp))
 (unless (package-installed-p 'company-statistics) (package-install 'company-statistics))
@@ -32,10 +33,13 @@
 (unless (package-installed-p 'format-all) (package-install 'format-all))
 (unless (package-installed-p 'glsl-mode) (package-install 'glsl-mode))
 (unless (package-installed-p 'google-translate) (package-install 'google-translate))
+(unless (package-installed-p 'groovy-mode) (package-install 'groovy-mode))
 (unless (package-installed-p 'helm-lsp) (package-install 'helm-lsp))
 (unless (package-installed-p 'helm-projectile) (package-install 'helm-projectile))
 (unless (package-installed-p 'json-mode) (package-install 'json-mode))
+(unless (package-installed-p 'kotlin-mode) (package-install 'kotlin-mode))
 (unless (package-installed-p 'linum-relative) (package-install 'linum-relative))
+(unless (package-installed-p 'lsp-java) (package-install 'lsp-java))
 (unless (package-installed-p 'lsp-mode) (package-install 'lsp-mode))
 (unless (package-installed-p 'lsp-treemacs) (package-install 'lsp-treemacs))
 (unless (package-installed-p 'lsp-ui) (package-install 'lsp-ui))
@@ -48,6 +52,7 @@
 (unless (package-installed-p 'realgud-lldb) (package-install 'realgud-lldb))
 (unless (package-installed-p 'russian-holidays) (package-install 'russian-holidays))
 (unless (package-installed-p 'rust-mode) (package-install 'rust-mode))
+(unless (package-installed-p 'scala-mode) (package-install 'scala-mode))
 (unless (package-installed-p 'sdcv) (package-install 'sdcv))
 (unless (package-installed-p 'telega) (package-install 'telega))
 (unless (package-installed-p 'transwin) (package-install 'transwin))
@@ -99,6 +104,11 @@
 (add-hook 'c++-mode-hook #'lsp-deferred)
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 (add-hook 'latex-mode-hook #'lsp-deferred)
+(add-hook 'java-mode-hook #'lsp)
+(add-hook 'scala-mode-hook #'lsp)
+(add-hook 'clojure-mode-hook #'lsp)
+(add-hook 'groovy-mode-hook #'lsp)
+(add-hook 'kotlin-mode-hook #'lsp)
 
 (require 'evil-easymotion)
 
@@ -283,33 +293,10 @@
     '((background-color . "black")
       (vertical-scroll-bars)
       (alpha . 85)))
- '(evil-collection-mode-list
-   '(2048-game ag alchemist anaconda-mode apropos arc-mode auto-package-update bm bookmark
-               (buff-menu "buff-menu")
-               calc calendar cider cmake-mode comint company compile consult
-               (custom cus-edit)
-               cus-theme dashboard daemons deadgrep debbugs debug dictionary diff-mode dired dired-sidebar disk-usage doc-view docker ebib edbi edebug ediff eglot explain-pause-mode elfeed elisp-mode elisp-refs elisp-slime-nav emms epa ert eshell eval-sexp-fu evil-mc eww finder flycheck flymake free-keys geiser ggtags git-timemachine gnus go-mode grep guix hackernews helm help helpful hg-histedit hungry-delete ibuffer image image-dired image+ imenu imenu-list
-               (indent "indent")
-               indium info ivy js2-mode leetcode lispy log-edit log-view lsp-ui-imenu lua-mode kotlin-mode macrostep man magit-todos monky mu4e mu4e-conversation neotree newsticker notmuch nov
-               (occur replace)
-               omnisharp org-present zmusic osx-dictionary outline p4
-               (package-menu package)
-               pass
-               (pdf pdf-view)
-               popup proced
-               (process-menu simple)
-               prodigy profiler python quickrun racer racket-describe realgud reftex restclient rg rjsx-mode robe rtags ruby-mode sh-script simple slime sly speedbar tab-bar tablist tabulated-list tar-mode
-               (term term ansi-term multi-term)
-               tetris thread tide timer-list transmission trashed typescript-mode vc-annotate vc-dir vc-git vdiff view vlf vterm w3m wdired wgrep which-key woman xref youtube-dl
-               (ztree ztree-diff)
-               xwidget))
  '(evil-shift-width 2)
  '(evil-undo-system 'undo-tree)
- '(helm-minibuffer-history-key "M-p")
  '(lsp-diagnostics-flycheck-default-level 'info)
  '(lsp-modeline-code-actions-segments '(count icon))
- '(lsp-rust-all-features t)
- '(lsp-rust-analyzer-cargo-watch-command "clippy")
  '(lsp-rust-clippy-preference "on")
  '(lsp-rust-wait-to-build 500.0)
  '(lsp-ui-sideline-diagnostic-max-lines 10)
@@ -320,26 +307,20 @@
      "< " mode-line-misc-info mode-line-client mode-line-remote mode-line-buffer-identification mode-line-position evil-mode-line-tag))
  '(opascal-indent-level 2)
  '(package-selected-packages
-   '(sdcv telega cyberpunk-theme timerfunctions clean-buffers all-the-icons evil-nerd-commenter google-translate unicode-fonts company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
+   '(format-all sdcv telega cyberpunk-theme timerfunctions clean-buffers all-the-icons evil-nerd-commenter google-translate unicode-fonts company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
  '(realgud-safe-mode nil)
  '(tab-width 2)
  '(telega-mode-line-mode t)
- '(telega-server-libs-prefix "~/.emacs.d/telega")
- '(treemacs-ignored-file-predicates '(treemacs-ignore)))
+ '(telega-server-libs-prefix "~/.emacs.d/telega"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "maroon"))))
- '(company-tooltip-common ((t (:inherit company-tooltip :foreground "magenta"))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-common :foreground "blue"))))
  '(font-lock-comment-delimiter-face ((t (:foreground "gainsboro" :slant italic))))
  '(font-lock-comment-face ((t (:foreground "gainsboro" :slant italic))))
  '(lsp-lsp-flycheck-warning-unnecessary-face ((t (:inherit nil :extend nil :stipple nil :foreground "orchid" :strike-through nil :underline nil :slant italic))) t)
  '(magit-diff-their-highlight ((t (:inherit magit-diff-added-highlight :foreground "cyan"))))
- '(magit-head ((t (:foreground "cyan" :weight bold))))
- '(magit-reflog-checkout ((t (:foreground "cyan"))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :background "red" :foreground "yellow1"))))
  '(rainbow-delimiters-depth-1-face ((t (:inherit outline-1 :foreground "red1"))))
  '(rainbow-delimiters-depth-4-face ((t (:inherit outline-4 :foreground "magenta1"))))

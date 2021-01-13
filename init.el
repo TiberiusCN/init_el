@@ -36,6 +36,7 @@
 (unless (package-installed-p 'groovy-mode) (package-install 'groovy-mode))
 (unless (package-installed-p 'helm-lsp) (package-install 'helm-lsp))
 (unless (package-installed-p 'helm-projectile) (package-install 'helm-projectile))
+(unless (package-installed-p 'indent-guide) (package-install 'indent-guide))
 (unless (package-installed-p 'json-mode) (package-install 'json-mode))
 (unless (package-installed-p 'kotlin-mode) (package-install 'kotlin-mode))
 (unless (package-installed-p 'linum-relative) (package-install 'linum-relative))
@@ -331,7 +332,7 @@
      "< " mode-line-misc-info mode-line-client mode-line-remote mode-line-buffer-identification mode-line-position evil-mode-line-tag))
  '(opascal-indent-level 2)
  '(package-selected-packages
-   '(scala-mode lsp-java kotlin-mode groovy-mode clojure-mode sdcv telega cyberpunk-theme timerfunctions clean-buffers all-the-icons evil-nerd-commenter google-translate unicode-fonts company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
+   '(indent-guide scala-mode lsp-java kotlin-mode groovy-mode clojure-mode sdcv telega cyberpunk-theme timerfunctions clean-buffers all-the-icons evil-nerd-commenter google-translate unicode-fonts company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
  '(realgud-safe-mode nil)
  '(tab-width 2)
  '(telega-mode-line-mode t)
@@ -343,6 +344,7 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-comment-delimiter-face ((t (:foreground "gainsboro" :slant italic))))
  '(font-lock-comment-face ((t (:foreground "gainsboro" :slant italic))))
+ '(indent-guide-face ((t (:foreground "dark violet" :slant normal))))
  '(lsp-lsp-flycheck-warning-unnecessary-face ((t (:inherit nil :extend nil :stipple nil :foreground "orchid" :strike-through nil :underline nil :slant italic))) t)
  '(magit-diff-their-highlight ((t (:inherit magit-diff-added-highlight :foreground "cyan"))))
  '(magit-head ((t (:foreground "cyan" :weight bold))))

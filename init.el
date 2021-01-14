@@ -195,7 +195,7 @@
 (require 'format-all)
 (add-hook 'prog-mode-hook 'format-all-mode)
 
-(require 'indent-guide')
+(require 'indent-guide)
 (add-hook 'prog-mode-hook 'indent-guide-global-mode)
 
 ;; syntax table

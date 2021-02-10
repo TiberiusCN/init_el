@@ -55,6 +55,7 @@
 (unless (package-installed-p 'rainbow-delimiters) (package-install 'rainbow-delimiters))
 (unless (package-installed-p 'realgud) (package-install 'realgud))
 (unless (package-installed-p 'realgud-lldb) (package-install 'realgud-lldb))
+(unless (package-installed-p 'redtick) (package-install 'redtick))
 (unless (package-installed-p 'russian-holidays) (package-install 'russian-holidays))
 (unless (package-installed-p 'rust-mode) (package-install 'rust-mode))
 (unless (package-installed-p 'scala-mode) (package-install 'scala-mode))
@@ -341,6 +342,8 @@
  '(package-selected-packages
    '(maven-test-mode javadoc-lookup nexus mvn indent-guide scala-mode lsp-java kotlin-mode groovy-mode clojure-mode sdcv telega cyberpunk-theme timerfunctions clean-buffers all-the-icons evil-nerd-commenter google-translate unicode-fonts company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
  '(realgud-safe-mode nil)
+ '(redtick-rest-interval 600)
+ '(redtick-work-interval 1800)
  '(tab-width 2)
  '(telega-mode-line-mode t)
  '(telega-server-libs-prefix "~/.emacs.d/telega"))

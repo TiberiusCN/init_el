@@ -116,6 +116,14 @@
 (add-hook 'groovy-mode-hook #'lsp)
 (add-hook 'kotlin-mode-hook #'lsp)
 
+(require 'glsl-mode)
+(add-to-list 'lsp-language-id-configuration '(glsl-mode . "render-lsp"))
+  (lsp-register-client
+   (make-lsp-client :new-connection (lsp-stdio-connection "render-lsp")
+                    :major-modes '(glsl-mode)
+                    :server-id 'render-lsp))
+  (add-hook 'glsl-mode-hook #'lsp)
+
 (require 'evil-easymotion)
 
 (require 'magit)

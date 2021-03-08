@@ -26,7 +26,6 @@
 (unless (package-installed-p 'evil) (package-install 'evil))
 (unless (package-installed-p 'evil-collection) (package-install 'evil-collection))
 (unless (package-installed-p 'evil-easymotion) (package-install 'evil-easymotion))
-(unless (package-installed-p 'evil-magit) (package-install 'evil-magit))
 (unless (package-installed-p 'evil-nerd-commenter) (package-install 'evil-nerd-commenter))
 (unless (package-installed-p 'flycheck) (package-install 'flycheck))
 (unless (package-installed-p 'flycheck-rust) (package-install 'flycheck-rust))
@@ -127,7 +126,6 @@
 (require 'evil-easymotion)
 
 (require 'magit)
-(require 'evil-magit)
 
 (require 'russian-holidays)
 (setq calendar-holidays russian-holidays)
@@ -311,26 +309,6 @@
     '((background-color . "black")
       (vertical-scroll-bars)
       (alpha . 85)))
- '(evil-collection-mode-list
-   '(2048-game ag alchemist anaconda-mode apropos arc-mode auto-package-update bm bookmark
-               (buff-menu "buff-menu")
-               calc calendar cider cmake-mode comint company compile consult
-               (custom cus-edit)
-               cus-theme dashboard daemons deadgrep debbugs debug dictionary diff-mode dired dired-sidebar disk-usage doc-view docker ebib edbi edebug ediff eglot explain-pause-mode elfeed elisp-mode elisp-refs elisp-slime-nav emms epa ert eshell eval-sexp-fu evil-mc eww finder flycheck flymake free-keys geiser ggtags git-timemachine gnus go-mode grep guix hackernews helm help helpful hg-histedit hungry-delete ibuffer image image-dired image+ imenu imenu-list
-               (indent "indent")
-               indium info ivy js2-mode leetcode lispy log-edit log-view lsp-ui-imenu lua-mode kotlin-mode macrostep man magit-todos monky mu4e mu4e-conversation neotree newsticker notmuch nov
-               (occur replace)
-               omnisharp org-present zmusic osx-dictionary outline p4
-               (package-menu package)
-               pass
-               (pdf pdf-view)
-               popup proced
-               (process-menu simple)
-               prodigy profiler python quickrun racer racket-describe realgud reftex restclient rg rjsx-mode robe rtags ruby-mode sh-script simple slime sly speedbar tab-bar tablist tabulated-list tar-mode
-               (term term ansi-term multi-term)
-               tetris thread tide timer-list transmission trashed typescript-mode vc-annotate vc-dir vc-git vdiff view vlf vterm w3m wdired wgrep which-key woman xref youtube-dl
-               (ztree ztree-diff)
-               xwidget))
  '(evil-shift-width 2)
  '(evil-undo-system 'undo-tree)
  '(helm-minibuffer-history-key "M-p")
@@ -350,8 +328,6 @@
  '(package-selected-packages
    '(maven-test-mode javadoc-lookup nexus mvn indent-guide scala-mode lsp-java kotlin-mode groovy-mode clojure-mode sdcv telega cyberpunk-theme timerfunctions clean-buffers all-the-icons evil-nerd-commenter google-translate unicode-fonts company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic flycheck-rust rust-mode flycheck evil))
  '(realgud-safe-mode nil)
- '(redtick-rest-interval 600)
- '(redtick-work-interval 1800)
  '(tab-width 2)
  '(telega-mode-line-mode t)
  '(telega-server-libs-prefix "~/.emacs.d/telega"))

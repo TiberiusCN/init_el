@@ -443,7 +443,7 @@
     ("for_each" . "λ_")
     ("try_for_each" . "λ_.")
     ("map" . "λ")
-    ("map_or_else" . "λ")
+    ("map_or_else" . "λ=")
     ("map_ok" . "λ")
     ("map_err" . "μ")
     ("filter_map" . "λ,—")
@@ -454,6 +454,8 @@
     ("map_err" . "μ")
     ("fold" . "β")
     ("or_else" . "λ—")
+    ("ok_or" . "λ")
+    ("ok_or_else" . "λ—")
     ("flatten" . "ξ")
     ("flat_map" . "ξ")
     ;; todo-like

@@ -330,8 +330,8 @@
  '(package-selected-packages
    '(lsp-metals lsp-scala maven-test-mode javadoc-lookup nexus mvn indent-guide scala-mode lsp-java kotlin-mode groovy-mode clojure-mode sdcv telega cyberpunk-theme timerfunctions clean-buffers all-the-icons evil-nerd-commenter google-translate unicode-fonts company-statistics lua-mode company-glsl glsl-mode origami auto-complete rainbow-delimiters json-mode magit xclip molokai-theme ## treemacs-evil linum-relative color-theme-modern rustic rust-mode evil))
  '(realgud-safe-mode nil)
- '(redtick-rest-interval 480)
- '(redtick-work-interval 1200)
+ '(redtick-rest-interval 600)
+ '(redtick-work-interval 900)
  '(tab-width 2)
  '(telega-mode-line-mode t)
  '(telega-server-libs-prefix "~/.emacs.d/telega"))
